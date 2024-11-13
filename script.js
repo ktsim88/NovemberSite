@@ -1,13 +1,13 @@
-let userName = prompt('WHO ARe YOU')
-let userQuest = prompt('Whay is your quest?')
-let userFavColor = prompt('What is your favorite color?')
-let swallowAirSpeed = prompt('What is the air speed of an unlaiden sawllow')
+let userName = prompt('What is your name?')
+let userQuest = prompt('Give a noun')
+let userFavColor = prompt('Give a color')
+let userNum = prompt('Give any number over 0')
 console.log(userName)
 
 
 let myStory = `
-<p> Hello ${userName}. Answer me these questions <spam class="loud">three</span>, and the other side you'll work.</p>
-<p> I see you have already answered, so your quest is ${userQuest}.</p>
+<p> Welcome <i>${userName}</i>! You just entered a survival show and you have to give it your all in order to make it up the ranks to debut in a group.</p>
+<p> You are up against <i>${userNum}<i>.</p>
 `
 console.log(document.getElementById('story'))
 
