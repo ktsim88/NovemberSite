@@ -23,12 +23,12 @@ h2 {
 }
 /* larger content */
 #roundOneContainer {
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231231/pngtree-unlimited-linear-background-dark-gray-striped-texture-in-vector-seamless-abstract-image_13922701.png");
+    background-image: url("imgs/blackbg.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 #roundTwoContainer {
-    background-image: url("https://img.freepik.com/free-vector/concert-stage-stairs-with-spotlights-confetti_107791-29272.jpg");
+    background-image: url("imgs/finalstage.avif");
     background-repeat: no-repeat;
     background-size: cover;
 }
