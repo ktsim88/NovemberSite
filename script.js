@@ -7,13 +7,17 @@ let userEmotion = prompt("How are you feeling right now?");
 let userColor = prompt("What is your favorite color?");
 let userFood = prompt("Name a food");
 let userAnimal = prompt("Name an animal");
-let userPlace = prompt("Name a place");
 let userClothing = prompt("Name a piece of clothing");
+let userSong = prompt("Give a song")
+let userPerson = prompt("Name any person that's not an artist")
+let userKitchen = prompt("Name anything in a kitchen")
 // numerical variables
 let numPeople = Math.ceil(Math.random() * 100);
 let numTop = Math.round(numPeople / 2);
-let numRank = Math.floor(Math.random() * 5);
+let numRank = Math.floor(Math.random() * 5) +1
 let userRank = Math.floor(Math.random() * numTop);
+let numFinal = Math.round(numPeople / 4)
+let numWinner = Math.floor(Math.random() * numFinal) +1
 console.log(userName);
 
 // story rules
@@ -70,10 +74,11 @@ document.getElementById("startBtn").addEventListener("click", function () {
                 <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
                 <p class="card-text">
                     <ol>
-                        <li>You have to survive 2 rounds and you have a chance to win <i>$${userNum}</i></li>
+                        <li>There are two songs that were given. Your options were <i>${userMusic}</i> by <i>${userArtist}</i> and ${userSong} by <i>${userPerson}</i>.</li>
+                        <li>You will have to ${userVerb} to the song and you will be judged by ${userPerson} and ${userArtist}</li>
                         <li>You have to get top <i>${numTop}</i> in order to survive.</li>
                         <li>If you are below the top <i>${numTop}</i>, you will be <strong>eliminated.</strong></li>
-                        <li>Those who rank top <i>${numRank}</i> will have special benefits in each round.</li>
+                        <li>Those who rank top <i>${numRank}</i> will have extra time and given better quality materials for the next round.</li>
                         <li>And lastly...good luck!</li>
                     </ol>
                 </p>
@@ -85,7 +90,12 @@ document.getElementById("startBtn").addEventListener("click", function () {
             <div class="card-body text-center">
                 <h5 class="card-title">Your Results</h5>
                 <p class="card-text">
+                Welcome ${userName} to Music Showdown!
                     <ul>
+                    <li>You were assigned with <i>${userMusic}</i></li>
+                    <li>You absolutely hated this option and prayed for <i>${userSong}</i></li>
+                    <li></li>
+                    <li>You have to <i>${userVerb}</i> to ${userMusic} by ${userArtist}</li>
                     <li>You are up against <i>${numPeople}</i> people.</li>
                     <li>Your current rank is <i>${userRank}</i></li>
                     </ul>
@@ -124,10 +134,10 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
                   <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
                   <p class="card-text">
                       <ol>
-                          <li>You have to survive 2 rounds and you have a chance to win <i>$${userNum}</i></li>
-                          <li>You have to get top <i>${numTop}</i> in order to survive.</li>
-                          <li>If you are below the top <i>${numTop}</i>, you will be <strong>eliminated.</strong></li>
-                          <li>Those who rank top <i>${numRank}</i> will have special benefits in each round.</li>
+                          <li>This is the final round so give it your all!!!</li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
                           <li>And lastly...good luck!</li>
                       </ol>
                   </p>
@@ -140,7 +150,7 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
                   <h5 class="card-title">Your Results</h5>
                   <p class="card-text">
                       <ul>
-                      <li>You are up against <i>${numPeople}</i> people.</li>
+                      <li>Your ${userClothing} caught on fire while using the ${userKitchen}</li>
                       <li>Your current rank is <i>${userRank}</i></li>
                       </ul>
                   </p>
