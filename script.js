@@ -16,14 +16,13 @@ let numPeople = Math.ceil(Math.random() * 100);
 let numTop = Math.round(numPeople / 2);
 let numRank = Math.floor(Math.random() * 5) +1
 let userRank = Math.floor(Math.random() * numTop);
-let numFinal = Math.round(numPeople / 4)
-let numWinner = Math.floor(Math.random() * numFinal) +1
+let finalRank = Math.floor(Math.random() * numTop)
 console.log(userName);
 
 // story rules
 let myStory = `
-<p> Welcome <i>${userName}</i>! You entered a survival show where you can earn up to <i>$${userNum}</i>. You are up against <i>${numPeople}</i> people.</p>
-<div class="row">
+<p class="welcome"> Welcome <i>${userName}</i>! You entered a survival show where you can earn up to <i>$${userNum}</i>. You are up against <i>${numPeople}</i> people.</p>
+<div class="row intro">
     <div class="col-12 col-md-6 mb-3 g-2">
         <div class="card mx-auto" style="width: 18rem;">
             <div class="card-body text-center">
@@ -85,7 +84,7 @@ document.getElementById("startBtn").addEventListener("click", function () {
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-4 mb-3 g-2">
+    <div class="col-12 col-md-4 mb-3 g-2 py-3">
         <div class="card mx-auto" style="width: 18rem;">
             <div class="card-body text-center">
                 <h5 class="card-title">Your Results</h5>
@@ -93,11 +92,10 @@ document.getElementById("startBtn").addEventListener("click", function () {
                 Welcome ${userName} to Music Showdown!
                     <ul>
                     <li>You were assigned with <i>${userMusic}</i></li>
-                    <li>You absolutely hated this option and prayed for <i>${userSong}</i></li>
-                    <li></li>
+                    <li>You felt ${userEmotion} this option but you prefered <i>${userSong}</i></li>
                     <li>You have to <i>${userVerb}</i> to ${userMusic} by ${userArtist}</li>
                     <li>You are up against <i>${numPeople}</i> people.</li>
-                    <li>Your current rank is <i>${userRank}</i></li>
+                    <li></li>
                     </ul>
                 </p>
             </div>
@@ -117,6 +115,7 @@ document.getElementById("startBtn").addEventListener("click", function () {
             </div>
         </div>
     </div>
+    
 </div>
     `;
     this.style.display = 'none'
@@ -135,9 +134,9 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
                   <p class="card-text">
                       <ol>
                           <li>This is the final round so give it your all!!!</li>
-                          <li></li>
-                          <li></li>
-                          <li></li>
+                          <li>You will have to make 5 servings of the food of your choice</li>
+                          <li>The main thing is to NOT burn the kitchen</li>
+                          <li>You will be judged (again....) by ${userPerson}</li>
                           <li>And lastly...good luck!</li>
                       </ol>
                   </p>
@@ -150,8 +149,11 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
                   <h5 class="card-title">Your Results</h5>
                   <p class="card-text">
                       <ul>
+                      <li>You chose to make ${userFood} for this round.</li>
+                      <li>You thought you could easily make it but that backfired quickly.</li>
                       <li>Your ${userClothing} caught on fire while using the ${userKitchen}</li>
-                      <li>Your current rank is <i>${userRank}</i></li>
+                      <li>You ran to a ${userColor} ${userAnimal} which actually killed you instead.</li>
+                      <li>Your rank would have been <i>${finalRank}</i></li>
                       </ul>
                   </p>
               </div>
@@ -164,8 +166,8 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
                   <h6 class="card-subtitle mb-2 text-body-secondary">(How to Play)</h6>
                   <p class="card-text">
                       <ul>
-                      <li>You are up against <i>${numPeople}</i> people.</li>
-                      <li>Your current rank is <i>${userRank}</i></li>
+                      <li>You are up against <i>${numTop}</i> people.</li>
+                      <li>Your current rank is <i>${finalRank}</i></li>
                       </ul>
                   </p>
               </div>
