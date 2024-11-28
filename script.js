@@ -65,8 +65,8 @@ document.getElementById("story").innerHTML = myStory;
 document.getElementById("startBtn").addEventListener("click", function () {
   let roundContainer = document.getElementById("roundOneContainer");
   roundContainer.innerHTML = `
-    <div class="round-content row">
-    <h2 class="py-1">Round 1: Music Showdown</h2>
+    <div class="round-content row py-3">
+    <h2 class="py-1">&#127900Round 1: Music Showdown &#x1F39D</h2>
     <div class="col-12 col-md-4 mb-3 g-2">
         <div class="card mx-auto" style="width: 18rem;">
             <div class="card-body text-center">
@@ -74,8 +74,8 @@ document.getElementById("startBtn").addEventListener("click", function () {
                 <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
                 <p class="card-text">
                     <ol>
-                        <li>There are two songs that were given. Your options were <i>${userMusic}</i> by <i>${userArtist}</i> and ${userSong} by <i>${userPerson}</i>.</li>
-                        <li>You will have to ${userVerb} to the song and you will be judged by ${userPerson} and ${userArtist}</li>
+                        <li>There are two songs that were given. Your options were <i>${userMusic}</i> by <i>${userArtist}</i> and <i>${userSong}</i> by <i>${userPerson}</i>.</li>
+                        <li>You will have to <i>${userVerb}</i> to the song and you will be judged by <i>${userPerson}</i> and <i>${userArtist}</i></li>
                         <li>You have to get top <i>${numTop}</i> in order to survive.</li>
                         <li>If you are below the top <i>${numTop}</i>, you will be <strong>eliminated.</strong></li>
                         <li>Those who rank top <i>${numRank}</i> will have extra time and given better quality materials for the next round.</li>
@@ -94,7 +94,7 @@ document.getElementById("startBtn").addEventListener("click", function () {
                     <ul>
                     <li>You were assigned with <i>${userMusic}</i></li>
                     <li>You felt ${userEmotion} this option but you prefered <i>${userSong}</i></li>
-                    <li>You have to <i>${userVerb}</i> to ${userMusic} by ${userArtist}</li>
+                    <li>You have to <i>${userVerb}</i> to <i>${userMusic}<i> by <i>${userArtist}</i></li>
                     <li>You are up against <i>${numPeople}</i> people.</li>
                     <li></li>
                     </ul>
