@@ -5,18 +5,23 @@ let repeatVerb = prompt("Give the same verb in -ing form")
 let userMusic = prompt("Name a song");
 let userSong = prompt("Name another song")
 let userArtist = prompt("Name a singer/group");
+let userPerson = prompt("Name a person that's not a singer")
 let userEmotion = prompt("How are you feeling right now?");
 let userColor = prompt("What is your favorite color?");
 let userFood = prompt("Name a food");
 let userAnimal = prompt("Name an animal");
 let userClothing = prompt("Name a piece of clothing");
-let userPerson = prompt("Name any person that's not an artist")
+
 let userKitchen = prompt("Name anything in a kitchen")
 // numerical variables
 let numPeople = Math.ceil(Math.random() * 100);
+// final round people
 let numTop = Math.round(numPeople / 2);
-let numRank = Math.floor(Math.random() * 5) +1
+// people in top ranking
+let numRank = Math.floor(Math.random() * 5) + 1
+// ranking from round 1
 let userRank = Math.floor(Math.random() * numTop);
+// ranking from final round
 let finalRank = Math.floor(Math.random() * numTop)
 console.log(userName);
 
@@ -62,7 +67,7 @@ let myStory = `
 console.log(document.getElementById("story"));
 
 document.getElementById("story").innerHTML = myStory;
-// round 1
+// round 1 button to show row of cards
 document.getElementById("startBtn").addEventListener("click", function () {
   let roundContainer = document.getElementById("roundOneContainer");
   roundContainer.innerHTML = `
@@ -108,11 +113,11 @@ document.getElementById("startBtn").addEventListener("click", function () {
           <div class="card mx-auto" style="width: 18rem;">
               <div class="card-body text-center">
                   <h5 class="card-title">Your Stats</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">(How to Play)</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
                   <p class="card-text">
                       <ul>
-                      <li>You were up against <i>${numTop}</i> people.</li>
-                      <li>Your rank is <i>${numRank}</i></li>
+                      <li>You were up against <i>${numPeople}</i> people.</li>
+                      <li>Your rank is <i>${userRank}</i></li>
                       <li>You were lucky that <i>${userPerson}</i> pitied you or else you would have been eliminated...</li>
                       <li>It's funny how you beat everyone on your team.</li>
                       <li>You figured that your <i>${userColor} ${userClothing}</i> gave you luck since you wore it to the competition.</li>
@@ -125,23 +130,25 @@ document.getElementById("startBtn").addEventListener("click", function () {
     `;
     this.style.display = 'none'
 });
-// round 2 = final round
+// round 2 = final round, button to show row of cards
 document.getElementById("nextRoundBtn").addEventListener("click", function () {
     let roundContainer = document.getElementById("roundTwoContainer");
     roundContainer.innerHTML = `
       <div class="round-content row">
-      <h2 class="py-1">Final Round: Cooking Frenzy</h2>
+      <h2 class="py-1">Final Round: OverCooked</h2>
       <div class="col-12 col-md-4 mb-3 g-2">
           <div class="card mx-auto" style="width: 18rem;">
               <div class="card-body text-center">
                   <h5 class="card-title">Rules</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">(Final Round)</h6>
                   <p class="card-text">
+                  If you were in the top <i>${numRank}</i>, you got an extra 30 minutes in the cooking process and will be placed in an expensive kitchen.
                       <ol>
                           <li>This is the final round so give it your all!!!</li>
-                          <li>You will have to make 5 servings of the food of your choice</li>
+                          <li>You will have to make 5 servings of the food of your choice in 2 hours.</li>
                           <li>The main thing is to NOT burn the kitchen</li>
                           <li>You will be judged (again....) by <i>${userPerson}</i></li>
+                          <li>It must have a very appetizing look</li>
                           <li>And lastly...good luck!</li>
                       </ol>
                   </p>
@@ -149,29 +156,34 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
           </div>
       </div>
       <div class="col-12 col-md-4 mb-3 g-2">
-          <div class="card mx-auto" style="width: 18rem;">
+          <div class="card mx-auto dead" style="width: 18rem;">
               <div class="card-body text-center">
                   <h5 class="card-title">Your Results</h5>
                   <p class="card-text">
-                      <ul>
+                      <ul class="died">
                       <li>You chose to make <i>${userFood}</i> for this round.</li>
                       <li>You thought you could easily make it but that backfired quickly.</li>
+                      <li>You entered the kitchen and saw the <i>${userKitchen}</i></li>
                       <li>Your <i>${userClothing}</i> caught on fire while using the <i>${userKitchen}</i></li>
-                      <li>You ran to a <i>${userColor}${userAnimal}</i>  which actually killed you instead.</li>
+                      <li>The first thing you saw was an strange animal.</li>
+                      <li>You ran to a <i>${userColor} ${userAnimal}</i>  which actually killed you instead.</li>
                       </ul>
                   </p>
               </div>
           </div>
       </div>
       <div class="col-12 col-md-4 mb-3 g-2">
-          <div class="card mx-auto" style="width: 18rem;">
+          <div class="card mx-auto dead" style="width: 18rem;">
               <div class="card-body text-center">
                   <h5 class="card-title">Your Stats</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">(How to Play)</h6>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">(Final Round)</h6>
                   <p class="card-text">
-                      <ul>
+                      <ul class="died">
                       <li>You are up against <i>${numTop}</i> people.</li>
                       <li>Your rank would have been <i>${finalRank}</i></li>
+                      <li>You didn't survive long enough as the judge never tried your food.</li>
+                      <li>You had so much potential to rank much higher...maybe if you didn't run to <i>${userColor} ${userAnimal}</i></li>
+                      <li>May you rest in peace</li>
                       </ul>
                   </p>
               </div>
