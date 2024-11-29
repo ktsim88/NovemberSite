@@ -1,6 +1,7 @@
 let userName = prompt("What is your name?");
 let userNum = prompt("Give any number");
 let userVerb = prompt("Give a verb");
+let repeatVerb = prompt("Give the same verb in -ing form")
 let userMusic = prompt("Name a song");
 let userSong = prompt("Name another song")
 let userArtist = prompt("Name a singer/group");
@@ -65,59 +66,62 @@ document.getElementById("story").innerHTML = myStory;
 document.getElementById("startBtn").addEventListener("click", function () {
   let roundContainer = document.getElementById("roundOneContainer");
   roundContainer.innerHTML = `
-    <div class="round-content row py-3">
-    <h2 class="py-1">&#127900Round 1: Music Showdown &#x1F39D</h2>
-    <div class="col-12 col-md-4 mb-3 g-2">
-        <div class="card mx-auto" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h5 class="card-title">Rules</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
-                <p class="card-text">
-                    <ol>
+<div class="round-content row">
+      <h2 class="py-1">&#127900 Round 1: Music Showdown &#x1F39D</h2>
+      <div class="col-12 col-md-4 mb-3 g-2">
+          <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Rules</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">(Round 1)</h6>
+                  <p class="card-text">
+                      <ol>
                         <li>There are two songs that were given. Your options were <i>${userMusic}</i> by <i>${userArtist}</i> and <i>${userSong}</i> by <i>${userPerson}</i>.</li>
                         <li>You will have to <i>${userVerb}</i> to the song and you will be judged by <i>${userPerson}</i> and <i>${userArtist}</i></li>
                         <li>You have to get top <i>${numTop}</i> in order to survive.</li>
-                        <li>If you are below the top <i>${numTop}</i>, you will be <strong>eliminated.</strong></li>
+                        <li>If not, you will be <strong>eliminated.</strong></li>
                         <li>Those who rank top <i>${numRank}</i> will have extra time and given better quality materials for the next round.</li>
                         <li>And lastly...good luck!</li>
                     </ol>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-md-4 mb-3 g-2 py-3">
-        <div class="card mx-auto" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h5 class="card-title">Your Results</h5>
-                <p class="card-text">
-                Welcome ${userName} to Music Showdown!
-                    <ul>
-                    <li>You were assigned with <i>${userMusic}</i></li>
-                    <li>You felt ${userEmotion} this option but you prefered <i>${userSong}</i></li>
-                    <li>You have to <i>${userVerb}</i> to <i>${userMusic}<i> by <i>${userArtist}</i></li>
-                    <li>You are up against <i>${numPeople}</i> people.</li>
-                    <li></li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-md-4 mb-3 g-2">
-        <div class="card mx-auto" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h5 class="card-title">Your Stats</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">(How to Play)</h6>
-                <p class="card-text">
-                    <ul>
-                    <li>You are up against <i>${numPeople}</i> people.</li>
-                    <li>Your current rank is <i>${userRank}</i></li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-    </div>
-    
-</div>
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 col-md-4 mb-3 g-2">
+          <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Your Results</h5>
+                  <p class="card-text">
+                    Welcome <i>${userName}</i> to Music Showdown!
+                      <ul>
+                      <li>You were assigned with <i>${userMusic}</i> and you hated it.</li>
+                      <li>You tried your best to <i>${userVerb}</i> but it failed</li>
+                      <li><i>${userArtist}</i> said that you suck at <i>${repeatVerb}</i>.</li>
+                      <li>However, <i>${userPerson}</i> pitied you because you worked so hard.</li>
+                      <li>You felt <i>${userEmotion}</i> about the outcome.</li>
+                      <li>You made it to the next round.</li>
+                      </ul>
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div class="col-12 col-md-4 mb-3 g-2">
+          <div class="card mx-auto" style="width: 18rem;">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Your Stats</h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">(How to Play)</h6>
+                  <p class="card-text">
+                      <ul>
+                      <li>You were up against <i>${numTop}</i> people.</li>
+                      <li>Your rank is <i>${numRank}</i></li>
+                      <li>You were lucky that <i>${userPerson}</i> pitied you or else you would have been eliminated...</li>
+                      <li>It's funny how you beat everyone on your team.</li>
+                      <li>You figured that your <i>${userColor} ${userClothing}</i> gave you luck since you wore it to the competition.</li>
+                      </ul>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
     `;
     this.style.display = 'none'
 });
@@ -153,7 +157,7 @@ document.getElementById("nextRoundBtn").addEventListener("click", function () {
                       <li>You chose to make <i>${userFood}</i> for this round.</li>
                       <li>You thought you could easily make it but that backfired quickly.</li>
                       <li>Your <i>${userClothing}</i> caught on fire while using the <i>${userKitchen}</i></li>
-                      <li>You ran to a <i>${userColor}</i> ${userAnimal} which actually killed you instead.</li>
+                      <li>You ran to a <i>${userColor}${userAnimal}</i>  which actually killed you instead.</li>
                       </ul>
                   </p>
               </div>
