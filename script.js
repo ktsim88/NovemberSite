@@ -81,7 +81,7 @@ document.getElementById("startBtn").addEventListener("click", function () {
                   <p class="card-text">
                       <ol>
                         <li>There are two songs that were given. Your options were <i>${userMusic}</i> by <i>${userArtist}</i> and <i>${userSong}</i> by <i>${userPerson}</i>.</li>
-                        <li>You will have to <i>${userVerb}</i> to the song and you will be judged by <i>${userPerson}</i> and <i>${userArtist}</i></li>
+                        <li>You will have to <i>${userVerb}</i> the song and you will be judged by <i>${userPerson}</i> and <i>${userArtist}</i></li>
                         <li>You have to get top <i>${numTop}</i> in order to survive.</li>
                         <li>If not, you will be <strong>eliminated.</strong></li>
                         <li>Those who rank top <i>${numRank}</i> will have extra time and given better quality materials for the next round.</li>
